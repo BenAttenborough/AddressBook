@@ -67,6 +67,14 @@ function renderOtherRecords() {
             +  ' '
             + bensAddressBook.addresses[record].lastName
             + '</button>';
-        console.log(recordElement);
     }
+};
+
+function recordButtonsFunctionality(){
+    var recordButtons = document.getElementById('records').getElementsByClassName('btn--default');
+    console.log(recordButtons);
+    for (var button in recordButtons) {
+//        console.log(recordButtons[button].innerHTML);
+    }
+//    console.log(recordButtons);
 }

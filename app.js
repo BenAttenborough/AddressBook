@@ -20,3 +20,4 @@ bensAddressBook.add(robert);
 
 renderAllFields();
 renderOtherRecords();
+recordButtonsFunctionality();
