@@ -61,18 +61,20 @@ backButton.onclick = function () {
 function renderOtherRecords() {
     var recordElement = document.getElementById('records');
     recordElement.innerHTML = '';
+    //Create the buttons
     for (var record in bensAddressBook.addresses) {
-        recordElement.innerHTML += '<button id="recordButton' + record + '" class="btn--default">' 
-            + bensAddressBook.addresses[record].firstName
-            +  ' '
-            + bensAddressBook.addresses[record].lastName
-            + '</button>';
+        recordElement.innerHTML += '<button class="btn--default"></button>';
+    }
+    var recordButtons = document.getElementById('records').getElementsByClassName('btn--default');
+    //Add names to buttons
+    for (var button in bensAddressBook.addresses) {
+        recordButtons[button].innerHTML = bensAddressBook.addresses[button].firstName + " " + bensAddressBook.addresses[button].lastName;
     }
 };
 
 function recordButtonsFunctionality(){
     var recordButtons = document.getElementById('records').getElementsByClassName('btn--default');
-    console.log(recordButtons);
+//    console.log(recordButtons);
     for (var button in recordButtons) {
 //        console.log(recordButtons[button].innerHTML);
     }
