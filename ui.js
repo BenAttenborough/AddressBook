@@ -57,3 +57,16 @@ backButton.onclick = function () {
     }
     renderAllFields();
 };
+
+function renderOtherRecords() {
+    var recordElement = document.getElementById('records');
+    recordElement.innerHTML = '';
+    for (var record in bensAddressBook.addresses) {
+        recordElement.innerHTML += '<button id="recordButton' + record + '" class="btn--default">' 
+            + bensAddressBook.addresses[record].firstName
+            +  ' '
+            + bensAddressBook.addresses[record].lastName
+            + '</button>';
+        console.log(recordElement);
+    }
+}

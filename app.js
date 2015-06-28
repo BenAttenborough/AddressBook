@@ -19,3 +19,4 @@ var robert = new Address("Robert", "Bringhurst", "England", "+00 5355 12555678",
 bensAddressBook.add(robert);
 
 renderAllFields();
+renderOtherRecords();
