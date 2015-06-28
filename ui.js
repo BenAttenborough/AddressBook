@@ -1,6 +1,4 @@
 function renderName() {
-    console.log("Address index is: " + bensAddressBook.addressIndex);
-    console.log("Name should be: " + bensAddressBook.addresses[bensAddressBook.addressIndex].firstName);
     console.log("Rendering name");
     var nameElement = document.getElementById('Name');
     nameElement.innerHTML = bensAddressBook.addresses[bensAddressBook.addressIndex].firstName + " " +
@@ -42,10 +40,20 @@ function renderAllFields() {
 
 var forwardButton = document.getElementById("next");
 forwardButton.onclick = function () {
-    if (bensAddressBook.addressIndex >= bensAddressBook.addresses.length) {
+    if (bensAddressBook.addressIndex >= bensAddressBook.addresses.length-1) {
         bensAddressBook.addressIndex = 0;
     } else {
         bensAddressBook.addressIndex++;
+    }
+    renderAllFields();
+};
+
+var backButton = document.getElementById("last");
+backButton.onclick = function () {
+    if (bensAddressBook.addressIndex === 0) {
+        bensAddressBook.addressIndex = (bensAddressBook.addresses.length-1);
+    } else {
+        bensAddressBook.addressIndex--;
     }
     renderAllFields();
 };
