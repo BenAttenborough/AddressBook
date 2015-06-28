@@ -66,7 +66,7 @@ function renderOtherRecords() {
         recordElement.innerHTML += '<button class="btn--default"></button>';
     }
     var recordButtons = document.getElementById('records').getElementsByClassName('btn--default');
-    //Add names to buttons
+    //Add names and functionality to buttons to buttons
     for (var button in bensAddressBook.addresses) {
         recordButtons[button].innerHTML = bensAddressBook.addresses[button].firstName + " " + bensAddressBook.addresses[button].lastName;
     }
