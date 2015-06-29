@@ -69,14 +69,13 @@ function renderOtherRecords() {
     //Add names and functionality to buttons to buttons
     for (var button in bensAddressBook.addresses) {
         recordButtons[button].innerHTML = bensAddressBook.addresses[button].firstName + " " + bensAddressBook.addresses[button].lastName;
+        bindButton(recordButtons[button], button);
     }
 };
 
-function recordButtonsFunctionality(){
-    var recordButtons = document.getElementById('records').getElementsByClassName('btn--default');
-//    console.log(recordButtons);
-    for (var button in recordButtons) {
-//        console.log(recordButtons[button].innerHTML);
-    }
-//    console.log(recordButtons);
+function bindButton(button, index) {
+  button.onclick = function(){
+    bensAddressBook.addressIndex = index;
+    renderAllFields();
+  };
 }
